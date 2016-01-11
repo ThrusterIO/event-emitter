@@ -50,6 +50,23 @@ $emitter->on('foo.bar', function (Foo $bar) {
 $emitter->emit('foo.bar', [$fooBar]);
 ```
 
+### Using Advance Event Emitter
+
+ ```php
+$emitter = new AdvanceEventEmitter();
+
+$emitter->on('foo.bar', function (EventInterface $event) {
+   // ... Do something good
+
+   $event->stopPropagation(); // you can stop further execution
+});
+
+$emitter->on('foo.bar', function (EventInterface $event) {
+   // ... Never gets called
+});
+
+$emitter->emit('foo.bar', new Event($fooBar));
+```
 
 ## Testing
 

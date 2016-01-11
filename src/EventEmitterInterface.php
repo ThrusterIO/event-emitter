@@ -1,6 +1,6 @@
 <?php
-namespace Thruster\Component\EventEmitter;
 
+namespace Thruster\Component\EventEmitter;
 
 /**
  * Trait EventEmitterTrait
